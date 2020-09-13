@@ -1,15 +1,11 @@
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
-LOCAL_RRO_THEME := QuickstepSwitcher
+LOCAL_MODULE := QuickstepSwitcherOverlay
+LOCAL_MODULE_STEM := QuickstepSwitcherOverlay.apk
+LOCAL_SRC_FILES := QuickstepSwitcherOverlay.apk
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT)/product/overlay/QuickstepSwitcherOverlay
 
-LOCAL_PRODUCT_MODULE := true
-
-LOCAL_SRC_FILES := $(call all-subdir-java-files)
-
-LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res
-
-LOCAL_PACKAGE_NAME := QuickstepSwitcherOverlay
-LOCAL_SDK_VERSION := current
-
-include $(BUILD_RRO_PACKAGE)
+include $(BUILD_PREBUILT)
